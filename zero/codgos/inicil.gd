@@ -16,4 +16,4 @@ func _ready():
 #	pass
 
 func _on_Button_button_up():
-	get_tree().change_scene("res://Node2D.tscn")
+	get_tree().change_scene("res://cenas/Node2D.tscn")

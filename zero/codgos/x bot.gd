@@ -15,7 +15,7 @@ onready var animated_sprite = $AnimatedSprite2D  # Referência ao AnimatedSprite
 onready var zero = get_node("res://zero.tscn")  # Ajuste o caminho para a instância do Zero
 
 # Referência ao projeto de tiro
-onready var projectile_scene = preload("res://tiro normal.tscn")  # Substitua pelo caminho da cena do projétil
+onready var projectile_scene = preload("res://cenas/tiro normal.tscn")  # Substitua pelo caminho da cena do projétil
 
 func _ready():
 	# Conectar sinais de entrada e saída das áreas

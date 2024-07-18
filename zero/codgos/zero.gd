@@ -39,7 +39,7 @@ onready var animated_sprite = $AnimatedSprite2D
 onready var collision_shape = $CollisionShape2D
 onready var dash_sound = $DashSound  # Substitua 'DashSound' pelo nome do seu nó de som de dash
 onready var attack_sound = $AttackSound  # Substitua 'AttackSound' pelo nome do seu nó de som de ataque
-onready var projectile_scene = preload("res://tiro do zero.tscn")  # Carrega a cena do projétil
+onready var projectile_scene = preload("res://cenas/tiro do zero.tscn")  # Carrega a cena do projétil
 
 # Variável para controlar a direção
 var move_direction = 1  # 1 para direita, -1 para esquerda
