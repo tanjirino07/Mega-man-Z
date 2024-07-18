@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Megaman X - Storm Eagle Stage - NeoSigma18 (mp3cut.net)(2).mp3-dec1d4286e360c03b5eb485a6faf9d97.mp3str"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/Megaman X - Storm Eagle Stage - NeoSigma18 (mp3cut.net)(2).mp3"
+dest_files=[ "res://.import/Megaman X - Storm Eagle Stage - NeoSigma18 (mp3cut.net)(2).mp3-dec1d4286e360c03b5eb485a6faf9d97.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

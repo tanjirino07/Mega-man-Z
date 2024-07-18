@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/62 - MMX - Enemy Motor 2.wav-fb21aa3db6860b67c5ff9fa86439509a.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/Mega Man X SNES SFX/62 - MMX - Enemy Motor 2.wav"
+dest_files=[ "res://.import/62 - MMX - Enemy Motor 2.wav-fb21aa3db6860b67c5ff9fa86439509a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

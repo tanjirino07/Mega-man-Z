@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://imagens/x bots/mmz1xbot.png" type="Texture" id=1]
+[ext_resource path="res://imagens/x bots/mmz1xbot(4).png" type="Texture" id=2]
+[ext_resource path="res://codgos/x bot.gd" type="Script" id=3]
+[ext_resource path="res://imagens/x bots/New Piskel(2).png" type="Texture" id=4]
+[ext_resource path="res://imagens/x bots/mmz1xbot(2).png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 50, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 50, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 50, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 50, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "andando",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "atirando",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "mirar",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "parado",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 22, 40 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 18, 40 )
+
+[node name="x bot" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 12 )
+animation = "atirando"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4, 0 )
+shape = SubResource( 13 )
+
+[node name="esquerda" type="Area2D" parent="."]
+position = Vector2( -16, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="esquerda"]
+position = Vector2( -18, 0 )
+shape = SubResource( 14 )
+
+[node name="direita" type="Area2D" parent="."]
+position = Vector2( 8, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="direita"]
+position = Vector2( 14, 0 )
+shape = SubResource( 15 )
+
+[connection signal="body_entered" from="esquerda" to="." method="_on_esquerda_body_entered"]
+[connection signal="body_entered" from="direita" to="." method="_on_direita_body_entered"]
