@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://imagens/zero/zero_z1standardframes(2).png" type="Texture" id=1]
 [ext_resource path="res://imagens/zero/New Piskel.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://imagens/zero/zero_z1bustersheet(5).png" type="Texture" id=12]
 [ext_resource path="res://imagens/zero/zero_z1sabresheet.png" type="Texture" id=13]
 [ext_resource path="res://imagens/zero/zero_z1sabresheet (1).png" type="Texture" id=14]
+[ext_resource path="res://imagens/zero/zero_z1standardframes(6).png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 12.5, 17.5 )
@@ -298,6 +299,14 @@ region = Rect2( 0, 42, 50, 42 )
 atlas = ExtResource( 2 )
 region = Rect2( 50, 42, 50, 42 )
 
+[sub_resource type="AtlasTexture" id=147]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=148]
+atlas = ExtResource( 15 )
+region = Rect2( 50, 0, 50, 50 )
+
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 50, 42 )
@@ -390,6 +399,22 @@ region = Rect2( 0, 250, 102, 50 )
 atlas = ExtResource( 13 )
 region = Rect2( 102, 250, 102, 50 )
 
+[sub_resource type="AtlasTexture" id=149]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 15 )
+region = Rect2( 50, 50, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 100, 50, 50 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 15 )
+region = Rect2( 50, 100, 50, 50 )
+
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 50, 50 )
@@ -479,6 +504,11 @@ animations = [ {
 "name": "dash",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 147 ), SubResource( 148 ) ],
+"loop": false,
+"name": "grudando",
+"speed": 12.0
+}, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
 "loop": true,
 "name": "parado",
@@ -493,6 +523,11 @@ animations = [ {
 "loop": false,
 "name": "parado zsabre 2",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ) ],
+"loop": true,
+"name": "parede",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": false,
@@ -528,7 +563,7 @@ position = Vector2( -24, 14 )
 rotation = -1.57512
 frames = SubResource( 37 )
 animation = "fogo"
-frame = 2
+frame = 1
 playing = true
 
 [node name="fogo2" type="AnimatedSprite" parent="fogodir"]
@@ -536,7 +571,7 @@ position = Vector2( -10, 15 )
 rotation = -1.57512
 frames = SubResource( 37 )
 animation = "fogo"
-frame = 2
+frame = 1
 playing = true
 
 [node name="fogoesq" type="Node2D" parent="."]
@@ -547,7 +582,7 @@ position = Vector2( -24, 14 )
 rotation = -1.57512
 frames = SubResource( 37 )
 animation = "fogo"
-frame = 2
+frame = 1
 playing = true
 
 [node name="fogo2" type="AnimatedSprite" parent="fogoesq"]
@@ -555,7 +590,7 @@ position = Vector2( -10, 15 )
 rotation = -1.57512
 frames = SubResource( 37 )
 animation = "fogo"
-frame = 2
+frame = 1
 playing = true
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
@@ -568,7 +603,7 @@ stream = ExtResource( 8 )
 z_index = 1
 frames = SubResource( 31 )
 animation = "parado"
-frame = 8
+frame = 4
 playing = true
 
 [node name="SpriteTrail" type="Node2D" parent="AnimatedSprite"]
@@ -586,3 +621,6 @@ margin_right = 33.0
 margin_bottom = -26.0
 max_value = 101.0
 step = 1.0
+
+[connection signal="tree_entered" from="." to="." method="_on_zero_tree_entered"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
